@@ -1,34 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import AlbumCard from './AlbumCard.jsx'
 
-function App() {
-  const [count, setCount] = useState(0)
+const Albums =
+  {
+    "albums": [
+      {
+        "title": "Graduation",
+        "artist": "Kanye West",
+        "score": "5",
+        "cover_link": "https://upload.wikimedia.org/wikipedia/en/7/70/Graduation_%28album%29.jpg"
+      },
+      {
+        "title": "Nevermind",
+        "artist": "Nirvana",
+        "score": "4",
+        "cover_link": "https://images.prismic.io/milanote/df7eeb83a07162b45ac2e882cac055de9411054a_cover.jpg?auto=compress,format"
+      }
+    ]
+  }
 
+
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Music Tracker</h1>
+      <AlbumCard album={Albums.albums[0]} />
+      <AlbumCard album={Albums.albums[1]} />
+
     </>
+
   )
 }
 
