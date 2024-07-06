@@ -1,0 +1,26 @@
+.Album {
+    border: 1px solid white;
+    padding: 10px;
+    margin: 50px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.AlbumInfoAndCoverContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.AlbumCover {
+    height: 100%;
+    margin-right: 20px;
+}
+
+.AlbumInformation {
+    margin-left: 10px;
+}

@@ -1,35 +1,22 @@
-import './App.css'
-import AlbumCard from './AlbumCard.jsx'
-
-const Albums =
-  {
-    "albums": [
-      {
-        "title": "Graduation",
-        "artist": "Kanye West",
-        "score": "5",
-        "cover_link": "https://upload.wikimedia.org/wikipedia/en/7/70/Graduation_%28album%29.jpg"
-      },
-      {
-        "title": "Nevermind",
-        "artist": "Nirvana",
-        "score": "4",
-        "cover_link": "https://images.prismic.io/milanote/df7eeb83a07162b45ac2e882cac055de9411054a_cover.jpg?auto=compress,format"
-      }
-    ]
-  }
-
+import "./App.css";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import MyCollectionPage from "./Pages/MyCollectionPage.jsx";
+import SearchPage from "./Pages/SearchPage.jsx";
+import Layout from "./Layout.jsx";
 
 const App = () => {
   return (
     <>
-      <h1>Music Tracker</h1>
-      <AlbumCard album={Albums.albums[0]} />
-      <AlbumCard album={Albums.albums[1]} />
-
+      <Router>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<MyCollectionPage />} />
+            <Route path="/search" element={<SearchPage />} />
+          </Route>
+        </Routes>
+      </Router>
     </>
+  );
+};
 
-  )
-}
-
-export default App
+export default App;

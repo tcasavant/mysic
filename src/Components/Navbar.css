@@ -1,0 +1,25 @@
+.Titlebar {
+    background: rgba(255, 255, 255, 0.87);
+    color: #242424;
+    display: flex;
+    align-items: baseline;
+    padding: 5px;
+}
+
+.Title {
+    padding: 0 10px;
+    background: #242424;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.NavItem {
+    margin: 0;
+    padding: 0 10px;
+}
+
+.NavLink {
+    color: #242424;
+}
+
+
+

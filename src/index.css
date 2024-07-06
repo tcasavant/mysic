@@ -13,4 +13,9 @@
     -moz-osx-font-smoothing: grayscale;
 
     box-sizing: border-box;
+
+    /* Do not let the width get too big as it looks bad*/
+    max-width: 1000px;
+    /* Center the root horizontally */
+    margin: auto;
 }
