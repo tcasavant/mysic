@@ -1,42 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AlbumCard from "../Components/AlbumCard.jsx";
 
-const AlbumsJson = {
-  albums: [
-    {
-      title: "Graduation",
-      artist: "Kanye West",
-      score: "5",
-      cover_link:
-        "https://upload.wikimedia.org/wikipedia/en/7/70/Graduation_%28album%29.jpg",
-      key: "graduation",
-      in_collection: "true",
-    },
-    {
-      title: "Nevermind",
-      artist: "Nirvana",
-      score: "4",
-      cover_link:
-        "https://images.prismic.io/milanote/df7eeb83a07162b45ac2e882cac055de9411054a_cover.jpg?auto=compress,format",
-      key: "nevermind",
-      in_collection: "false",
-    },
-  ],
-};
-
 const MyCollectionPage = () => {
-  const [albums, setAlbums] = useState([AlbumsJson.albums[0]]);
+  const [albums, setAlbums] = useState([]);
 
-  const addAlbum = (albumJson) => {
-    setAlbums((albums) => [...albums, albumJson]);
+  const getCollection = async () => {
+    const response = await fetch("http://localhost:4000/collection");
+    const data = await response.json();
+    const albumsWithIds = data.albums.map((album) => {
+      return {
+        ...album,
+        key: Math.random(),
+      };
+    });
+
+    setAlbums(albumsWithIds);
   };
+
+  const addAlbum = async () => {
+    await fetch("http://localhost:4000/addalbum", {
+      method: "Post",
+    });
+
+    getCollection();
+  };
+
+  useEffect(() => {
+    getCollection();
+  }, []);
 
   return (
     <>
       <button
         className="addAlbumButton"
         onClick={() => {
-          addAlbum(AlbumsJson.albums[1]);
+          addAlbum();
         }}
       >
         Add album
