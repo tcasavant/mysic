@@ -7,10 +7,10 @@ const MyCollectionPage = () => {
   const getCollection = async () => {
     const response = await fetch("http://localhost:4000/collection");
     const data = await response.json();
-    const albumsWithIds = data.albums.map((album) => {
+    const albumsWithIds = data.map((album) => {
       return {
         ...album,
-        key: Math.random(),
+        key: album.id,
       };
     });
 
@@ -19,7 +19,7 @@ const MyCollectionPage = () => {
 
   const addAlbum = async () => {
     await fetch("http://localhost:4000/addalbum", {
-      method: "Post",
+      method: "Put",
     });
 
     getCollection();
@@ -47,7 +47,7 @@ const MyCollectionPage = () => {
               title={album.title}
               artist={album.artist}
               score={album.score}
-              cover_link={album.cover_link}
+              cover_art_link={album.cover_art_link}
               in_collection={album.in_collection}
               key={album.key}
             />

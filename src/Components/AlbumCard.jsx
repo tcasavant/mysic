@@ -1,10 +1,14 @@
 import "./AlbumCard.css";
 
-const AlbumCard = ({ title, artist, score, cover_link, in_collection }) => {
+const AlbumCard = ({ title, artist, score, cover_art_link, in_collection }) => {
   return (
     <div className="Album">
       <div className="AlbumInfoAndCoverContainer">
-        <img className="AlbumCover" src={cover_link} alt="AlbumCard cover" />
+        <img
+          className="AlbumCover"
+          src={cover_art_link}
+          alt="AlbumCard cover"
+        />
 
         <div className="AlbumInfo">
           <p>
