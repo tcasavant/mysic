@@ -1,8 +1,5 @@
-# React + Vite
+# Mysic
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mysic is built for music lovers to track their listening and create a second brain for their musical taste. Like IMDB but for albums, users can save every album they listen to, give overall ratings, rate individual songs, and leave notes. They can also sort through their saved albums to see how they compare to each other and how their music taste changes over time.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Mysic is built in JavaScript based on the React Native framework for cross-compatibility between mobile devices, with a cloud-based SQL database allowing for reference no matter where you are.
